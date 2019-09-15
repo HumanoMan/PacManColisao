@@ -501,8 +501,8 @@ public class Stage1 extends JComponent implements Runnable{
             a.draw(g);
         }
         // Desenha PAC
-        pac.move();
         pac.draw(g);
+        pac.move();
         
         for(Block b: blocks){
             pac.collide(b);
