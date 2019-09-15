@@ -10,7 +10,5 @@ package pacman;
  * @author desenv
  */
 public class Collide {
-    public int dx;
-    public int dy;
     public boolean c;   // Teve colisão? Verdadeiro / Falso
 }
