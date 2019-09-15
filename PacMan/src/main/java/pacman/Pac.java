@@ -158,7 +158,7 @@ public class Pac extends PieceMove{
             }
         }
             this.d++;
-            if (d > 1) {
+            if (d > 1) { // Cria efeito de animação trocando os sprites
                 if (this.sprite == 1) {
                     this.sprite = 2;
                 }else if (this.sprite == 2) {
@@ -170,15 +170,15 @@ public class Pac extends PieceMove{
             }
         }
     
-    public void move(){
+    public void move(){ // Método de movimento e direção do Pac
         this.x= this.x+ this.velx;
         this.y= this.y+ this.vely;
     }
     
-    public Collide collide(Block b){
+    public Collide collide(Block b){ // Método de colisão do Pac
         Collide c = new Collide();
         
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 2; i++) { // For da colisão do pac e do block
            int p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y;
            int b1x, b1y, b2x, b2y, b3x, b3y, b4x, b4y;
         // Pontos de colisão do Pac
@@ -318,7 +318,7 @@ public class Pac extends PieceMove{
         int d4x = b3x - p4x;
         int d4y = p4y - b2y;
         
-        // Pac ponto 1 (X,Y) Canto superior esquerdo
+        // Block ponto 1 (X,Y) Canto superior esquerdo
         if (p1x >= b1x && p1x <= b2x) {
             if (p1y >= b1y && p1y <= b4y) {
                 if (velx == 5) {   // Ponto1 X
@@ -334,7 +334,7 @@ public class Pac extends PieceMove{
                  return c;
             }
         }
-        // Pac ponto 2 (X,Y) Canto superior direito
+        // Block ponto 2 (X,Y) Canto superior direito
         if (p2x >= b1x && p2x <= b2x) {
             if (p2y >= b1y && p2y <= b4y) {
                 if (velx == -5) {    // Ponto2 X
@@ -350,7 +350,7 @@ public class Pac extends PieceMove{
                  return c;
             }
         }
-        // Pac ponto 3 (X,Y) Canto inferior direito
+        // Block ponto 3 (X,Y) Canto inferior direito
          if (p3x >= b1x && p3x <= b2x) {
             if (p3y >= b1y && p3y <= b4y) {
                 if (velx == -5) {    // Ponto3 X
@@ -366,7 +366,7 @@ public class Pac extends PieceMove{
                  return c;
             }
         }
-         // Pac ponto 4 (X,Y) Canto inferior esquerdo
+         // Block ponto 4 (X,Y) Canto inferior esquerdo
          if (p4x >= b1x && p4x <= b2x) {
             if (p4y >= b1y && p4y <= b4y) {
                 if (velx == 5) {   // Ponto4 X
@@ -384,6 +384,6 @@ public class Pac extends PieceMove{
             }
         }
     }
-    return c;
+    return c; // Retornando os valores
     }
 }
